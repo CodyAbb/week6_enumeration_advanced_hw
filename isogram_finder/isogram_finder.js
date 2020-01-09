@@ -1,20 +1,24 @@
-const IsogramFinder = function (word) {
-    this.word = word.split('')
-}
+const IsogramFinder = function(word) {
+  this.word = word.split("");
+};
 
-IsogramFinder.prototype.isIsogram = function () {
-    const cleanedArray = this.word.map((letter) => {
-        return letter.toLowerCase();
-    });
+IsogramFinder.prototype.isIsogram = function() {
+  const cleanedArray = this.word.map(letter => {
+    return letter.toLowerCase();
+  });
 
-    const checkRepeats = arr => arr.filter((item, index) => arr.indexOf(item) != index);
+  const checkRepeats = array =>
+    array.filter((item, index) => array.indexOf(item) != index);
 
-    const result = checkRepeats(cleanedArray);
-    if (result.length > 0) {
-        return false;
-    } else {
-        return true;
-    }
-}
+  const result = checkRepeats(cleanedArray);
+  if (result.length > 0) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+//lookup spread and set
+//[..."harrison"]
 
 module.exports = IsogramFinder;
